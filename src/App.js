@@ -111,16 +111,19 @@ function App() {
       </div>
       <div className="mt-5">
         <div className="mt-5">
-          <div className="mt-5">
+          <div className="mt-5 relative flex min-h-screen flex-col 
+          justify-center items-center overflow-hidden bg-gray-300 py-6 sm:py-12">
             {imageURL && 
             <img 
               src={imageURL} 
               alt='Upload Preview' 
               crossOrigin='anonymous'
               ref={imageRef}
+              className='absolute top-1/2 left-1/2 max-w-none 
+              -translate-x-1/2 -translate-y-1/2" width="1308" items-center'
             />}
           </div>
-          <ul>
+          <ul className='flex justify-center items-center mt-10'>
           {results.length > 0 && 
           <div 
             className='resultsHolder'>
@@ -135,20 +138,17 @@ function App() {
                   <circle cx="12" cy="12" r="11" />
                   <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
                   </svg>
-                    <span 
-                      className='name'>
+                    <p 
+                      className='ml-4'>
                         {result.className}
-                    </span>
-                    <span 
-                      className='confidence'>
                         Confidence level: {(result.probability * 100).toFixed(2)}% 
                         {index === 0 && 
-                        <span 
+                        <p 
                           className='font-extrabold text-[#263caa]'>
                             Best Guess
-                        </span>
+                        </p>
                         }
-                    </span>
+                    </p>
                 </li>
                 )
               })}
@@ -160,7 +160,8 @@ function App() {
           type='button' 
           onClick={identify}
           className='text-white bg-green-700 font-medium
-          rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'>
+          rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center 
+          flex justify-center items-center'>
             Identify Image
         </button>}
       </div>
