@@ -93,7 +93,8 @@ function App() {
           ref={fileInputRef}
         />
         <button 
-          className='uploadImage' 
+          className='mt-3 text-white bg-[#6469ff] font-medium
+          rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center' 
           onClick={triggerUpload}> 
           Upload Image 
         </button>
@@ -169,6 +170,9 @@ function App() {
           {history.length > 0 &&
             <div className="recentPredictions">
             <h2>Recent Images</h2>
+            <p className='mt-2 text-[#666e75] text-[14px]'>
+            Explore the images you classify
+          </p>
             <div className="grid lg:grid-cols-4 sm:grid-cols-3
             xs:grid-cols-2 grid-cols-1 gap-3 justify-center items-center">
               {history.map((image, index) => {
