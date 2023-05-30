@@ -97,6 +97,7 @@ function App() {
           onClick={triggerUpload}> 
           Upload Image 
         </button>
+        <div className='mt-5'>
         <input 
           type='text' 
           placeholder='Paster image URL' 
@@ -106,10 +107,11 @@ function App() {
           text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff]
           outline-none block w-full p-3'
         />
+        </div>
       </div>
-      <div className="mainWrapper">
-        <div className="mainConten">
-          <div className="imageHolder">
+      <div className="mt-5">
+        <div className="mt-5">
+          <div className="mt-5">
             {imageURL && 
             <img 
               src={imageURL} 
@@ -118,14 +120,21 @@ function App() {
               ref={imageRef}
             />}
           </div>
+          <ul>
           {results.length > 0 && 
           <div 
             className='resultsHolder'>
               {results.map((result, index) => {
               return (
-                <div 
+                <li 
                   className='result' 
                   key={result.className}>
+                  <svg class="h-6 w-6 flex-none fill-sky-100 
+                  stroke-sky-500 stroke-2" stroke-linecap="round" 
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                  </svg>
                     <span 
                       className='name'>
                         {result.className}
@@ -135,20 +144,23 @@ function App() {
                         Confidence level: {(result.probability * 100).toFixed(2)}% 
                         {index === 0 && 
                         <span 
-                          className='bestGuess'>
+                          className='font-extrabold text-[#263caa]'>
                             Best Guess
                         </span>
                         }
                     </span>
-                </div>
-                            )
+                </li>
+                )
               })}
           </div>}
+          </ul>
         </div>
         {imageURL && 
         <button 
-          className='button' 
-          onClick={identify}>
+          type='button' 
+          onClick={identify}
+          className='text-white bg-green-700 font-medium
+          rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'>
             Identify Image
         </button>}
       </div>
