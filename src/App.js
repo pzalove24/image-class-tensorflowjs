@@ -111,16 +111,15 @@ function App() {
       </div>
       <div className="mt-5">
         <div className="mt-5">
-          <div className="mt-5 relative flex min-h-screen flex-col 
-          justify-center items-center overflow-hidden bg-gray-300 py-6 sm:py-12">
+          <div className="mt-5 flex h-screen w-full rounded-md 
+          justify-center items-center bg-gray-300">
             {imageURL && 
             <img 
               src={imageURL} 
               alt='Upload Preview' 
               crossOrigin='anonymous'
               ref={imageRef}
-              className='absolute top-1/2 left-1/2 max-w-none 
-              -translate-x-1/2 -translate-y-1/2" width="1308" items-center'
+              className='width="1308"'
             />}
           </div>
           <ul className='flex justify-center items-center mt-10'>
