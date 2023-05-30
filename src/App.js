@@ -64,22 +64,24 @@ function App() {
   }, [imageURL])
   
   if (isModelLoading) {
-    return <h2 
+    return <div 
     className='flex justify-center items-center'>
       Model Loading...
-      <p><Loader /></p>
-    </h2>
+      <div className='flex justify-center items-center'>
+        <Loader />
+      </div>
+    </div>
   }
 
   console.log(results)
 
   return (
-    <div className="w-full flex 
-    justify-between items-center 
-    bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
+    <section className="max-w-7xl mx-auto">
+      <div>
       <h1 className='font-extrabold text-[#263caa] text-[32px]'>
-        Image Identification
+        Image Identification by Peeratchai
       </h1>
+      </div>
       <div 
         className='inputHolder'>
         <input 
@@ -95,16 +97,14 @@ function App() {
           onClick={triggerUpload}> 
           Upload Image 
         </button>
-
-        <span 
-          className='or'> 
-          OR 
-        </span>
         <input 
           type='text' 
           placeholder='Paster image URL' 
           ref={textInputRef}
           onChange={handleOnChange}
+          className=' bg-gray-50 border border-gray-300 text-gray-900
+          text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff]
+          outline-none block w-full p-3'
         />
       </div>
       <div className="mainWrapper">
@@ -166,7 +166,7 @@ function App() {
               })}
             </div>
           </div>}
-    </div>
+    </section>
   );
 }
 
