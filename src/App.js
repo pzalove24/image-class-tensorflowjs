@@ -169,7 +169,8 @@ function App() {
           {history.length > 0 &&
             <div className="recentPredictions">
             <h2>Recent Images</h2>
-            <div className="recentImages">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-3
+            xs:grid-cols-2 grid-cols-1 gap-3 justify-center items-center">
               {history.map((image, index) => {
                 return (
                   <div className='recentPrediction' key={`${image}${index}`}>
