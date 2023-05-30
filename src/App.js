@@ -112,7 +112,7 @@ function App() {
       <div className="mt-5">
         <div className="mt-5">
           <div className="mt-5 flex h-screen w-full rounded-md 
-          justify-center items-center bg-gray-300">
+          justify-center items-center bg-gray-100">
             {imageURL && 
             <img 
               src={imageURL} 
@@ -122,7 +122,8 @@ function App() {
               className='width="1308"'
             />}
           </div>
-          <ul className='flex justify-center items-center mt-10'>
+          <ul className='flex justify-center items-center mt-10
+          bg-gray-100 py-1 sm:py-5 rounded-md'>
           {results.length > 0 && 
           <div 
             className='resultsHolder'>
@@ -153,17 +154,18 @@ function App() {
               })}
           </div>}
           </ul>
-        </div>
-        {imageURL && 
+          {imageURL && 
         <button 
           type='button' 
           onClick={identify}
           className='text-white bg-green-700 font-medium
-          rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center 
-          flex justify-center items-center'>
+          rounded-md text-sm w-full px-5 py-2.5 text-center 
+          flex justify-center items-center mt-10'>
             Identify Image
         </button>}
+        </div>
       </div>
+      <div className='mt-10 font-extrabold text-[#263caa] text-[32px]'>
           {history.length > 0 &&
             <div className="recentPredictions">
             <h2>Recent Images</h2>
@@ -178,6 +180,7 @@ function App() {
               })}
             </div>
           </div>}
+        </div>
     </section>
   );
 }
